@@ -3,3 +3,4 @@
 !.gitignore
 # ignore venvs
 venv/
+old_code/

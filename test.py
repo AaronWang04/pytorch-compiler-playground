@@ -1,25 +1,20 @@
 import torch
 from torch import nn
-import custom_backend
+from toy_backend import ToyBackend
 
-class TestModel(nn.Module):
-    def __init__(self, operation: str):
-        super(TestModel, self).__init__()
-        if operation not in ['add', 'mul']:
-            raise ValueError("Supported operations are 'add' and 'mul'.")
-        self.operation = operation
+class Model(nn.Module):
 
-    def forward(self, inputs):
-        for i in inputs: print(i)
-        a, b = inputs
-        if self.operation == 'add':
-            return torch.add(a, b)
-        elif self.operation == 'mul':
-            return torch.mul(a, b)
+    def __init__(self):
+        super(Model, self).__init__()
 
-model = TestModel('add')
+    def forward(self, x):
+        return torch.mul(x, 2)
+    
+model = Model()
 a = torch.randn(2, 2)
-b = torch.randn(2, 2)
-compiled_model = torch.compile(model, backend=custom_backend.simple_pointwise_backend)
-output = compiled_model((a, b))
-print("Output:", output)
+backend_instance = ToyBackend()
+compiled_model = torch.compile(model, backend=backend_instance)
+output = compiled_model(a)
+
+print(a)
+print(output)
