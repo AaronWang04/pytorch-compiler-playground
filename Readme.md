@@ -1,7 +1,7 @@
 # Pytorch compiler playground
 I am currently playing around with DL compilers!
 
-## Setup
+## Setup Guide
 Prerequisites (for now)
 - Python 3.8+
 - PyTorch 2.0+
