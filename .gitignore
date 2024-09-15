@@ -1,0 +1,5 @@
+# ignore .files
+.*
+!.gitignore
+# ignore venvs
+venv/
