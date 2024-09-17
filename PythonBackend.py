@@ -45,7 +45,6 @@ class PythonBackend:
         
         print(gm.graph)
         
-        operations = set()
         for node in gm.graph.nodes:
             if node.op == 'call_function':
                 if node.target == torch.add:
@@ -72,8 +71,9 @@ class PythonBackend:
                     node.target = power
                 else:
                     raise NotImplementedError(f"Operation {node.target} not supported.")
-        
+
         gm.recompile()
 
         print(gm.graph)
+        
         return gm
