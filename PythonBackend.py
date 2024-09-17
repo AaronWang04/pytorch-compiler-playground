@@ -1,11 +1,12 @@
+import math
 import torch
 from typing import Any, Callable
 
 # Define custom functions
-def add(a, b):
+def add(a: torch.tensor, b: torch.tensor | int | float):
     return a + b
 
-def mul(a, b):
+def mul(a: torch.tensor, b: int | float):
     return a * b
 
 def sub(a, b):
@@ -14,26 +15,37 @@ def sub(a, b):
 def div(a, b):
     return a / b
 
-def relu(a):
-    return torch.relu(a)
+def relu(a: torch.tensor):
+    return a * (a > 0)
 
-def matmul(a, b):
-    return torch.matmul(a, b)
+def matmul(a: torch.tensor, b: torch.tensor):
+    # Matrix multiplication of two 2D tensors
+    m, n = a.shape
+    n_t, p = b.shape
+    assert (n == n_t, "Tensor dimensions must match for matrix multiplication")
+    c = torch.zeros(m, p)
+    for i in range(m):
+        for j in range(p):
+            sum = 0
+            for k in range(n):
+                sum += a[i, k] * b[k, j]
+            c[i, j] = sum
+    return c
 
-def exp(a):
+def exp(a: torch.tensor):
     return torch.exp(a)
 
-def log(a):
+def log(a: torch.tensor):
     return torch.log(a)
 
-def sin(a):
+def sin(a: torch.tensor):
     return torch.sin(a)
 
-def cos(a):
+def cos(a: torch.tensor):
     return torch.cos(a)
 
-def power(a, b):
-    return torch.pow(a, b)
+def power(a: torch.tensor, b: torch.tensor):
+    return exp(b * log(a))
 
 class PythonBackend:
     """
@@ -75,5 +87,5 @@ class PythonBackend:
         gm.recompile()
 
         print(gm.graph)
-        
+
         return gm
