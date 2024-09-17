@@ -5,7 +5,7 @@ class ToyBackend:
     """
     Sample backend that replaces multiply with adding, not very useful but demonstrates
     """
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
     def __call__(self, gm: torch.fx.GraphModule, example_inputs: Any) -> Callable:

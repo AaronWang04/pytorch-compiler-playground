@@ -7,7 +7,7 @@ class PythonBackend:
     Backend that uses python implementation instead of Torch's BLAS implementation
     Expect major slowdowns
     """
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
     def __call__(self, gm: torch.fx.GraphModule, example_inputs: Any) -> Callable:
