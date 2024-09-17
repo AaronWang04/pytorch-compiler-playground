@@ -3,26 +3,26 @@ import torch
 from typing import Any, Callable
 
 # Define custom functions
-def add(a: torch.tensor, b: torch.tensor | int | float):
+def add(a: torch.Tensor, b: torch.Tensor | torch.NumberType):
     return a + b
 
-def mul(a: torch.tensor, b: int | float):
+def mul(a: torch.Tensor, b: torch.Tensor | torch.NumberType):
     return a * b
 
-def sub(a, b):
+def sub(a: torch.Tensor, b: torch.Tensor | torch.NumberType):
     return a - b
 
-def div(a, b):
+def div(a: torch.Tensor, b: torch.Tensor | torch.NumberType):
     return a / b
 
-def relu(a: torch.tensor):
+def relu(a: torch.Tensor):
     return a * (a > 0)
 
-def matmul(a: torch.tensor, b: torch.tensor):
+def matmul(a: torch.Tensor, b: torch.Tensor):
     # Matrix multiplication of two 2D tensors
     m, n = a.shape
     n_t, p = b.shape
-    assert (n == n_t, "Tensor dimensions must match for matrix multiplication")
+    assert n == n_t, "Tensor dimensions must match for matrix multiplication"
     c = torch.zeros(m, p)
     for i in range(m):
         for j in range(p):
@@ -32,19 +32,19 @@ def matmul(a: torch.tensor, b: torch.tensor):
             c[i, j] = sum
     return c
 
-def exp(a: torch.tensor):
+def exp(a: torch.Tensor):
     return torch.exp(a)
 
-def log(a: torch.tensor):
+def log(a: torch.Tensor):
     return torch.log(a)
 
-def sin(a: torch.tensor):
+def sin(a: torch.Tensor):
     return torch.sin(a)
 
-def cos(a: torch.tensor):
+def cos(a: torch.Tensor):
     return torch.cos(a)
 
-def power(a: torch.tensor, b: torch.tensor):
+def power(a: torch.Tensor, b: torch.Tensor):
     return exp(b * log(a))
 
 class PythonBackend:
