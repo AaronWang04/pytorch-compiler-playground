@@ -42,3 +42,10 @@ old_code/
 *.exe
 *.out
 *.app
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# vscode
+.vscode
