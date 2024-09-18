@@ -1,0 +1,16 @@
+numpy >= 1.23
+torch>=2.3.0
+torchvision
+datasets
+diffusers==0.27.1
+transformers
+sentencepiece
+sacremoses
+psutil
+
+# python test
+pytest==7.2
+# formatter
+black==22.10.0
+# linter
+pylint==2.13.9
