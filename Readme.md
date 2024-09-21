@@ -14,4 +14,4 @@ python3 -m venv venv
 pip install -r requirements.txt
 ```
 
-Currently all files are python, you can just run the tests. Soon i'll add support for C++ and use pybind as well.
+Currently all files are python, you can just run the tests. Soon i'll add for C++ and use pybind as well.
