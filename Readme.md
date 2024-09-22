@@ -4,7 +4,6 @@ I am currently playing around with how DL compilers work. The goal for this repo
 ## Setup Guide
 Prerequisites (for now)
 - Python 3.8+
-- PyTorch 2.0+
 
 Create virtual environment
 ```python

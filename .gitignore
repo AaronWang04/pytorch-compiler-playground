@@ -10,6 +10,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# build paths
+build/
+
 # only to me
 old_code/
 
