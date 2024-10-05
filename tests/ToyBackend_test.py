@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from python import ToyBackend
+from python.backends import ToyBackend
 
 """
 Demonstrates the torch computation graph and how it can be modified

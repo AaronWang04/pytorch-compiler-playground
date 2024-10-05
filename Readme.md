@@ -5,6 +5,12 @@ I am currently playing around with how DL compilers work. The goal for this repo
 Prerequisites (for now)
 - Python 3.8+
 
+Git
+```
+git clone https://github.com/AaronWang04/pytorch-compiler-playground.git
+git submodule update --init --recursive --remote
+```
+
 Create virtual environment
 ```python
 python3 -m venv venv
