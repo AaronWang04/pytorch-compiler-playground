@@ -13,8 +13,13 @@ venv.bak/
 # build paths
 build/
 
-# only to me
-old_code/
+# CMake
+_deps/
+cmake-build-debug/
+CMakeFiles/
+Makefile
+CMakeCache.txt
+cmake_install.cmake
 
 # Compiled Object files
 *.slo
