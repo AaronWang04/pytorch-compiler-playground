@@ -19,4 +19,11 @@ python3 -m venv venv
 pip install -r requirements.txt
 ```
 
+Compile C++
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
+
 Currently all files are python, you can just run the tests. Soon i'll add for C++ and use pybind as well.
