@@ -21,6 +21,9 @@ Makefile
 CMakeCache.txt
 cmake_install.cmake
 
+# Pip
+*.egg-info/
+
 # Compiled Object files
 *.slo
 *.lo
