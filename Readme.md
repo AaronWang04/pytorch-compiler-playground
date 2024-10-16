@@ -19,11 +19,22 @@ python3 -m venv venv
 pip install -r requirements.txt
 ```
 
-Compile C++
+### Setup with pip
+```bash
+pip install .
+```
+
+### Setup with CMake
+
+Build with cmake
 ```bash
 mkdir build && cd build
 cmake ..
 make
 ```
+You may need to link the build folder
+```bash
+export PYTHONPATH=$PYTHONPATH:/$(pwd)/build
+```
 
-Currently all files are python, you can just run the tests. Soon i'll add for C++ and use pybind as well.
+Try and run the pybind tests

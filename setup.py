@@ -4,7 +4,7 @@ import pybind11
 ext_modules = [
     Extension(
         'operators',
-        ['operators.cpp'],
+        ['csrc/operators.cpp'],
         include_dirs=[pybind11.get_include()],
         language='c++',
     ),
