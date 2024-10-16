@@ -3,11 +3,18 @@ cmake_minimum_required(VERSION 3.4...3.18)
 project(compiler)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_PREFIX_PATH /submodules/)
 
-find_package(Python3 REQUIRED COMPONENTS Development)
+find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 add_subdirectory(submodules/pybind11)
-add_subdirectory(submodules/libtorch)
+
+execute_process(
+  COMMAND ${Python3_EXECUTABLE} -c "import torch; import os; print(os.path.join(torch.__path__[0], 'share', 'cmake', 'Torch'))"
+  OUTPUT_VARIABLE Torch_DIR
+  OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# define target
+add_library(compiler SHARED csrc/compiler.cpp)
 
 # include(FetchContent)
 # FetchContent_Declare(
