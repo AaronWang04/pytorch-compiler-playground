@@ -13,7 +13,7 @@ include(FetchContent)
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 
 # define target
-add_library(cbackend SHARED csrc/operators.cpp)
+add_library(cbackend SHARED csrc/double_operators.cpp)
 
 # import pybind11
 add_subdirectory(submodules/pybind11)
@@ -34,4 +34,4 @@ set(Torch_DIR "${libtorch_SOURCE_DIR}/share/cmake/Torch")
 find_package(Torch REQUIRED)
 
 target_link_libraries(cbackend PRIVATE pybind11::module)
-pybind11_add_module(operators csrc/operators.cpp)
+pybind11_add_module(operators csrc/double_operators.cpp)
