@@ -19,6 +19,7 @@ class ToyBackend:
             if node.op == 'call_function':
                 if node.target == torch.mul:
                     node.target = torch.add
+
         gm.recompile()
 
         print(gm.graph)

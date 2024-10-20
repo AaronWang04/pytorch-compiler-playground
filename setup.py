@@ -4,15 +4,15 @@ from torch.utils.cpp_extension import CppExtension, BuildExtension
 
 ext_modules = [
     CppExtension(
-        'operators',
-        ['csrc/double_operators.cpp', 'csrc/tensor_operators.cpp'],
+        'COperators',
+        ['csrc/operators.cpp'],
         include_dirs=[pybind11.get_include()],
         language='c++',
     ),
 ]
 
 setup(
-    name='operators',
+    name='COperators',
     ext_modules=ext_modules,
     cmdclass={
         'build_ext': BuildExtension

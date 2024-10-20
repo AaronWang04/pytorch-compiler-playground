@@ -25,7 +25,7 @@ pip install .
 ```
 
 ### Setup with CMake
-
+*Not updated
 Build with cmake
 ```bash
 mkdir build && cd build
