@@ -1,5 +1,5 @@
 # Pytorch compiler playground
-I am currently playing around with how DL compilers work. The goal for this repository is to easily see how different optimization features impact performance. From writing O(n<sup>3</sup>) matmul in native python to using cuda templates, techniques such as operator fusing. This codebase should make it easy to tinker around and see.
+I am currently playing around with how DL compilers work. My goal is to learn all the tooling that enables python and pytorch to work with c++ and cuda. The goal for this repository is to easily see how different optimization features impact performance and to be easy to tinker with. 
 
 ## Setup Guide
 Prerequisites (for now)
