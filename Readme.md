@@ -14,18 +14,21 @@ git submodule update --init --recursive --remote
 Create virtual environment
 ```python
 python3 -m venv venv
-# on unix
-. venv/bin/activate
+source venv/bin/activate # on unix
+powershell venv/bin/Activate.ps1 # on WIndows powershell
+# you may need to run "Set-ExecutionPolicy Unrestricted"
+
+venv\Scripts\activate.bat # on Windows command prompt
 pip install -r requirements.txt
 ```
 
 ### Setup with pip
 ```bash
-pip install .
+python setup.py build
+pip install . # or "python setup.py install"
 ```
 
-### Setup with CMake
-*Not updated
+### Setup with CMake (Not working right now...)
 Build with cmake
 ```bash
 mkdir build && cd build
