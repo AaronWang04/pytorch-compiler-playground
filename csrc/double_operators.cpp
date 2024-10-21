@@ -1,17 +1,19 @@
-#include <pybind11/pybind11.h>
+namespace double_operators {
 
-double double_add(double i, double j) {
-    return i + j;
-}
+    double add(double i, double j) {
+        return i + j;
+    }
 
-double double_subtract(double i, double j) {
-    return i - j;
-}
+    double subtract(double i, double j) {
+        return i - j;
+    }
 
-double double_mul(double i, double j){
-    return i * j;
-}
+    double mul(double i, double j){
+        return i * j;
+    }
 
-double double_divide(double i, double j){
-    return i / j;
+    double divide(double i, double j){
+        return i / j;
+    }
+
 }

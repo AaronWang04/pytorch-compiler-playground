@@ -28,10 +28,8 @@ FetchContent_Declare(
   libtorch
   URL ${LIBTORCH_DOWNLOAD_URL}
 )
+
 FetchContent_MakeAvailable(libtorch)
 
 set(Torch_DIR "${libtorch_SOURCE_DIR}/share/cmake/Torch")
 find_package(Torch REQUIRED)
-
-target_link_libraries(cbackend PRIVATE pybind11::module)
-pybind11_add_module(operators csrc/double_operators.cpp)
