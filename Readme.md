@@ -5,7 +5,7 @@ I am currently playing around with how DL compilers work. My goal is to learn al
 Prerequisites (for now)
 - Python 3.8+
 
-Git
+Git repo setup
 ```
 git clone https://github.com/AaronWang04/pytorch-compiler-playground.git
 git submodule update --init --recursive --remote
