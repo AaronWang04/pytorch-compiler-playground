@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ### Setup with pip
 ```bash
 python setup.py build
-pip install . # or "python setup.py install"
+pip install -e . # or "python setup.py install"
 ```
 
 ### Setup with CMake (Not working right now...)
