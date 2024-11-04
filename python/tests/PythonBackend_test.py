@@ -2,7 +2,7 @@ import time
 
 import torch
 from torch import nn
-from python.backends.PythonBackend import PythonBackend
+from backends.PythonBackend import PythonBackend
 
 """
 Demonstrates the torch computation graph and how it can be modified

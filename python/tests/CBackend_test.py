@@ -2,7 +2,7 @@ import time
 
 import torch
 from torch import nn
-from python.backends.CBackend import CBackend
+from backends.CBackend import CBackend
 
 class OperatorModel(nn.Module):
     def __init__(self):

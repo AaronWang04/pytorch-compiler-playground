@@ -1,5 +1,11 @@
-#include <pybind11/pybind11.h> 
-#include <torch/extension.h>  // For PyTorch C++ extensions
+// Registers C++ operator functions with Python
+
+#include <pybind11/pybind11.h>
+#include <torch/extension.h>
+
+namespace py = pybind11;
+using namespace torch;
+using namespace torch::jit;
 
 // Include other source files
 #include "double_operators.cpp"
@@ -7,7 +13,7 @@
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(COperators, m) {
+PYBIND11_MODULE(CustomOperators, m) {
     // Expose functions
     m.def("tensor_add", &tensor_operators::add, "A function that adds two tensors");
     m.def("tensor_sub", &tensor_operators::subtract, "A function that subtracts two tensors");

@@ -4,8 +4,8 @@ from torch.utils.cpp_extension import CppExtension, BuildExtension, library_path
 
 ext_modules = [
     CppExtension(
-        'COperators',
-        ['csrc/operators.cpp'],
+        name='norapom',
+        sources=['csrc/register_operator.cpp', 'csrc/register_torchscript.cpp'],
         include_dirs=[pybind11.get_include()],
         libraries=['torch'],
         language='c++',
@@ -14,7 +14,7 @@ ext_modules = [
 ]
 
 setup(
-    name='COperators',
+    name='norapom',
     ext_modules=ext_modules,
     cmdclass={
         'build_ext': BuildExtension
