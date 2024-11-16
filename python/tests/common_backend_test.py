@@ -3,9 +3,9 @@ import torch
 from torch import nn
 import argparse
 
-from backends.ToyBackend import ToyBackend
-from backends.PythonBackend import PythonBackend
-from backends.CBackend import CBackend
+from python.backends.ToyBackend import ToyBackend
+from python.backends.PythonBackend import PythonBackend
+from python.backends.CBackend import CBackend
 
 class ToyModel(nn.Module):
 

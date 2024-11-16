@@ -4,7 +4,7 @@ from torch.utils.cpp_extension import CppExtension, BuildExtension, library_path
 
 ext_modules = [
     CppExtension(
-        name='norapom',
+        name='compiler',
         sources=['csrc/register_operator.cpp', 'csrc/register_torchscript.cpp'],
         include_dirs=[pybind11.get_include()],
         libraries=['torch'],
@@ -14,7 +14,7 @@ ext_modules = [
 ]
 
 setup(
-    name='norapom',
+    name='compiler',
     ext_modules=ext_modules,
     cmdclass={
         'build_ext': BuildExtension

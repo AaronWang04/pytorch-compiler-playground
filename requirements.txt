@@ -1,19 +1,19 @@
-numpy >= 1.23
-torch>=2.3.0
+numpy
+torch
 torchvision
 datasets
-diffusers==0.27.1
+diffusers
 transformers
 sentencepiece
 sacremoses
 psutil
 
 # python test
-pytest>=7.2
+pytest
 # formatter
-black>=24.4.0
+black
 # linter
-pylint>=2.13.9
+pylint
 
 # pybind
 pybind11
